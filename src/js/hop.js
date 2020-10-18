@@ -9,17 +9,17 @@
             isShadowed: false,
             open: function(){
                 if(hopCount === 0){
-                    hop_Collection.style.backgroundColor = "rgba(0, 0, 0, 0.7)"
+                    hop_Collection.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
                     hop_Collection.style.transitionDuration = ".2s";
                     hop_Collection.style.zIndex = "999";
                 }
             },
             close: function(){
                 if(hopCount === 0){
-                    hop_Collection.style.backgroundColor = "rgba(0, 0, 0, 0.0)"
+                    hop_Collection.style.backgroundColor = "rgba(0, 0, 0, 0.0)";
                     hop_Collection.style.transitionDuration = ".2s";
                     setTimeout(function(){
-                        hop_Collection.style.zIndex = "-1";
+                        hop_Collection.style.zIndex = "-999";
                     }, 200);
                 }
             }
