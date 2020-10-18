@@ -43,6 +43,27 @@
                 duration: ".2"
             });
             
+            Hop.add({
+                name : "Popup#2",
+                body : "<button class=\"close\"></button>\
+                        <h1>HoonPOP</h2>\
+                        <p>좋아요!</p>\
+                        <button class=\"black\">\
+                            <span>확인</span>\
+                        </button>\
+                        <button>\
+                            <span>취소</span>\
+                        </button>",
+                events : [
+                    {
+                        class : "close",
+                        event : function(){
+                            this.close();
+                        }
+                    }
+                ]
+            });
+
             function button_click(){
                 Hop["Popup#1"].open();
             }  
