@@ -1,0 +1,147 @@
+body{
+    margin: 0;
+}
+
+#Hop-Collection{
+    font-family: "Malgun Gothic";
+    user-select: none;
+    z-index: -1;
+    
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.0);
+    transition-property: background-Color;
+}
+
+.Hop{
+    width: 400px;
+    padding: 25px 0px;
+    display: inline-block;
+    position: relative;
+    
+    text-align: center;
+    letter-spacing: -1px;
+    
+    border: 1px solid #d3d3d3;
+    background-color: white;
+    
+    opacity: 0;
+    transition-property: top, opacity;
+}
+
+.Hop button:active{
+    padding: 0;
+}
+
+.Hop button span{
+    position: relative;
+}
+
+.Hop button:not(.close){
+    cursor: pointer;
+    
+    width: 100px;
+    height: 42px;
+    margin: 2px;
+    display: inline-block;
+    
+    outline: 0;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    background-color: white;
+    
+    position: relative;
+}
+
+.Hop button.black{
+    color: white;
+    border: 1px solid black;
+    background-color: black;
+}
+
+.Hop button.blue{
+    color: white;
+    border: 1px solid #6565d8;
+    background-color: #6565d8;
+}
+
+.Hop button.red{
+    color: white;
+    border: 1px solid #d86565;
+    background-color: #d86565;
+}
+
+.Hop button:not(.close)::before{
+    content: "";
+    display: block;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    left: -4px;
+    top: -4px;
+    position: absolute;
+    border: 4px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+    transition-duration: .2s;
+    transition-property: border-color;
+}
+
+.Hop button:active::before{
+    border-color: rgba(165, 165, 165, 0.25);
+}
+
+.Hop button.black:active::before{
+    border-color: rgba(0, 0, 0, 0.25);
+}
+
+.Hop button.blue:active::before{
+    border-color: rgba(0, 10, 255, 0.25);
+}
+
+.Hop button.red:active::before{
+    border-color: rgba(255, 0, 0, 0.25);
+}
+
+.Hop button.close{
+    cursor: pointer;
+    
+    right: 0;
+    top: 0;
+    position: absolute;
+    margin: 5px;
+    
+    width: 23px;
+    height: 23px;
+    background-color: transparent;
+    
+    outline: 0;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+
+.Hop button.close::before,
+.Hop button.close::after{
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 1px);
+    
+    content: "";
+    width: 1px;
+    height: 20px;
+    display: inline-block;
+    
+    background-color: #9f9f9f;
+}
+
+.Hop button.close::before{
+    transform: rotate(45deg);
+}
+
+.Hop button.close::after{
+    transform: rotate(-45deg);
+}

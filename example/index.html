@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hop</title>
+        
+        <script src="../release/1.0.0/hop.js"></script>
+        <script>
+            Hop.add({
+                name : "Popup#1",
+                body : "<button class=\"close\"></button>\
+                        <h1>HoonPOP</h2>\
+                        <p>간단하게 팝업을 구현해보세요!</p>\
+                        <button class=\"good blue\">\
+                            <span>좋아요</span>\
+                        </button>\
+                        <button class=\"bad\">\
+                            <span>싫어요</span>\
+                        </button>",
+                events : [
+                    {
+                        class : "close",
+                        event : function(){
+                            this.close();
+                        }
+                    },
+                    {
+                        class : "good",
+                        event : function(){
+                            console.log("good!");
+                        }
+                    },
+                    {
+                        class : "bad",
+                        event : function(){
+                            console.log("bad~");
+                        }
+                    }
+                ]
+            });
+            
+            function button_click(){
+                Hop["Popup#1"].open();
+            }  
+        </script>
+    </head>
+    <body>
+        <button onclick="button_click();">
+            <span>팝업</span>
+        </button>
+    </body>
+</html>
