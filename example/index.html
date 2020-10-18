@@ -28,7 +28,7 @@
                     {
                         class : "good",
                         event : function(){
-                            console.log("good!");
+                            Hop["Popup#2"].open();
                         }
                     },
                     {
@@ -38,6 +38,9 @@
                         }
                     }
                 ]
+            },{
+                animation: "Jump",
+                duration: ".2"
             });
             
             function button_click(){
