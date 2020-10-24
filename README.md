@@ -20,7 +20,7 @@
 ### scripts
 
 ```Javascript
-<script src="https://hoon-dev.github.io/Hop/release/1.0.0/hop.js"></script>
+<script src="https://hoon-dev.github.io/Hop/release/1.1.0/hop.js"></script>
 ```
 ## 🔍 Structure
 
