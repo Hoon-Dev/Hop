@@ -4,6 +4,9 @@
     var hop_Collection;
     
     window.Hop = (function(){
+        var isLoaded = false;
+
+        var popupCache = [];
         var hopCount = 0;
 
         /* shadow object */
@@ -28,6 +31,7 @@
                 }
             }
         };
+
         var eventMapping = function(div, index, events){
             var self = this;
             div.getElementsByClassName(events[index].class)[0]
@@ -37,6 +41,13 @@
         }
         
         return {
+            initialize: function(){
+                isLoaded = true;
+                for(var i=0; i<popupCache.length; i++){
+                    popupCache[i].open();
+                }
+                popupCache.length = 0;
+            },
             add: function({name, body, events}, effect){
                 /* popup object */
                 this[name] = new (function(){
@@ -45,6 +56,10 @@
                     effect = (effect || {animation: "", duration: ".2"});
 
                     this.open = function(time, callback){
+                        if(isLoaded === false){
+                            popupCache.push(this);
+                            return;
+                        }
                         if(isOpened === false){
                             shadow.open();
                             
@@ -112,5 +127,7 @@
         hop_Collection = document.createElement("div");
         hop_Collection.setAttribute("id", "Hop-Collection");
         document.body.appendChild(hop_Collection);
+
+        window.Hop.initialize();
     }
 })(window);
