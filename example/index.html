@@ -5,6 +5,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hop</title>
         
+        <style>
+            body{
+                background-color: #e1e6ec;
+            }
+
+            .button {
+                cursor: pointer;
+                position: absolute;
+                top: calc(50% - 50px);
+                left: calc(50% - 125px);
+
+                color: rgb(127, 132, 173);
+                font-size: 50px;
+                font-weight: 700;
+                text-shadow: 0 5px 10px rgba(69, 70, 153, 0.452);
+
+                width: 250px;
+                height: 100px;
+
+                background-color: #e1e6ec;
+                box-shadow: -10px -10px 50px 0 white,
+                            10px 10px 25px 0 rgb(192, 204, 224);
+
+                outline: 0;
+                border: 0;
+                border-radius: 50px;
+
+                transition-duration: .2s;
+            }
+
+            .button:hover{
+                box-shadow: -10px -10px 20px 0 white,
+                            10px 10px 10px 0 rgb(192, 204, 224);
+                transform: translateY(-10px);
+            }
+
+            .button:active{
+                box-shadow: -10px -10px 50px 0 white,
+                            10px 10px 25px 0 rgb(192, 204, 224);
+                transform: translateY(0px);
+            }
+
+            .button > span{
+                position: relative;
+            }
+
+            .button:active > span{
+                padding: 0;
+            }
+        </style>
+
         <script src="../release/1.0.0/hop.js"></script>
         <script>
             Hop.add({
@@ -62,16 +113,21 @@
                         }
                     }
                 ]
+            },{
+                animation: {
+                    open: "Jump",
+                    close: "Ghost"
+                },
+                duration: ".3"
             });
-
             function button_click(){
                 Hop["Popup#1"].open();
             }  
         </script>
     </head>
     <body>
-        <button onclick="button_click();">
-            <span>팝업</span>
+        <button onclick="button_click();" class="button">
+            <span>HOP</span>
         </button>
     </body>
 </html>
