@@ -79,7 +79,7 @@ Hop.add({
 
 > **(4). 팝업 CSS 수정하기**
 
-```CSS
+```HTML
 #팝업_이름 h1{
     color: red;
 }
